@@ -42,7 +42,13 @@ func httpGenerate(w http.ResponseWriter, r *http.Request) {
 func makePDF(w io.Writer, r io.Reader) error {
 	dot := exec.Command("dot", "-Tpdf")
 	stdin, err := dot.StdinPipe()
+	if err != nil {
+		return err
+	}
 	stdout, err := dot.StdoutPipe()
+	if err != nil {
+		return err
+	}
 	_, err = io.Copy(stdin, r)
 	if err != nil {
 		return err
