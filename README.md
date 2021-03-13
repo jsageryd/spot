@@ -2,6 +2,11 @@
 Provides an API to let clients generate PDFs from [Graphviz
 dot](http://www.graphviz.org/) files.
 
+## Installation
+```
+go install github.com/jsageryd/spot@latest
+```
+
 ## Usage
 ### Server
 Spot has no config. Just start it.
